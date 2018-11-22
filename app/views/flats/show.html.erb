@@ -1,0 +1,20 @@
+<h1><%=  @flat.name %></h1>
+
+<div class="restaurant-infos">
+  <img src="https://picsum.photos/300/?random" alt="">
+  <p><%= @flat.description %></p>
+  <p><%= @flat.address %></p>
+  <p><%= @flat.price_per_night %> € / night</p>
+  <p><%= @flat.number_of_guests %> guests max</p>
+</div>
+
+<div class="user-actions">
+  <p><%= link_to("edit flat", edit_flat_path(params[:id])) %></p>
+<!--   <p><%= link_to("delete flat", edit_flat_path(params[:id])) %></p> -->
+
+</div>
+
+<%= link_to("back to flats list", flats_path, class: 'btn btn-primary') %>
+<%= link_to "Delete this flat", flat_path(@flat), class: 'btn btn-danger',
+  method: :delete,
+  data: { confirm: "Are you sure?" } %>

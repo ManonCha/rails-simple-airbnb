@@ -1,0 +1,10 @@
+<h1>All flats</h1>
+<img src="https://picsum.photos/600/300?random" alt="">
+<% @flats.each do |flat| %>
+<div>
+  <%= flat.name %>
+  <%= link_to("see more", flat_path(flat.id)) %>
+</div>
+<% end %>
+
+<%= link_to("add a new flat", new_flat_path, class: 'btn btn-primary') %>
